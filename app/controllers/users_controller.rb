@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:success] = "削除しました"
     redirect_to signup_url
-  end	
+  end
   
   private
   def user_params
@@ -46,12 +46,5 @@ class UsersController < ApplicationController
   
   def set_user
     @user = User.find(params[:id])
-  end
-  
-  def logged_in_user
-      unless logged_in?
-        flash[:danger] = "ログインしてください"
-        redirect_to login_url
-      end
   end
 end
